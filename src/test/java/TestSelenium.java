@@ -8,7 +8,7 @@ This Project aims at:
 = attempts integrating BOBCAT which is more friendly for testing aem authoring activities thru SiteAdmin APIs
     = it helps in creating pages for authoring and destroys it after testing.
 */
-import org.openqa.selenium.By;
+/* import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 public class TestSelenium {
     public static void main(String[] args){
@@ -21,3 +21,4 @@ public class TestSelenium {
         driver.findElement(By.id("submit-button")).click();
     }
 }
+*/
