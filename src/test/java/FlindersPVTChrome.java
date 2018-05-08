@@ -110,10 +110,16 @@ public class FlindersPVTChrome {
     }
 
     @Test
-    public void Case11_ClickOnBusinessCourse() {
+    public void Case11_ClickOnBusinessCourseTest() {
         driver.get("http://www.flinders.edu.au/study");
         builder.moveToElement(driver.findElement(By.id("main-item"))).pause(5).perform();
         driver.findElement(By.partialLinkText("Business, commerce and management")).click();
+    }
+
+    @Test
+    public void Case12To14_ViewallCoursesTest() {
+        driver.get("http://www.flinders.edu.au/international/arts");
+        driver.findElement(By.partialLinkText("View all courses")).click();
     }
 
     @Test
