@@ -132,6 +132,16 @@ public class FlindersPVTChrome {
     }
 
     @Test
+    public void Case17_FeedbackSubmit() {
+        driver.get("https://www.flinders.edu.au/website-feedback");
+    }
+
+    @Test
+    public void Case18_ContactUs() {
+        driver.get("https://www.flinders.edu.au/study-online/contact-us");
+    }
+
+    @Test
     public void Case19_LegacyCMSTest(){
         driver.get("http://www.flinders.edu.au/library");
         driver.get("http://www.flinders.edu.au/ehl");
