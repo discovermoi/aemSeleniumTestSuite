@@ -15,13 +15,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class TestSelenium {
 
  @Test
-    public void OpenHomePageTest(){
+    public void Case1_OpenHomePageTest(){
      FirefoxDriver driver=new FirefoxDriver();
      driver.get("http://www.flinders.edu.au");
    }
 
  @Test
-    public void checkLegacyCMSTest(){
+    public void Case19_checkLegacyCMSTest(){
      FirefoxDriver driver=new FirefoxDriver();
      driver.get("http://www.flinders.edu.au/library");
      driver.get("http://www.flinders.edu.au/ehl");
@@ -31,5 +31,16 @@ public class TestSelenium {
      driver.get("http://www.flinders.edu.au/sabs");
      driver.get("http://www.flinders.edu.au/science_engineering");
  }
+
+    @Test
+    public void Case20_keyApplicationsOutofScope(){
+        FirefoxDriver driver=new FirefoxDriver();
+        driver.get("http://events.flinders.edu.au");
+        driver.get("http://www.flinders.edu.au/directory/main-display-search-form.cfm");
+        driver.get("http://www.flinders.edu.au/people/john.roddick ");
+    }
+
+
+
 
 }
