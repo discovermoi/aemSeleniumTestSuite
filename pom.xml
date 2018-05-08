@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.11.0</version>
+    <groupId>au.edu.flinders</groupId>
+    <artifactId>flinders-pvt</artifactId>
+    <version>1.0</version>
 
     <dependencies>
         <!-- These are the cucumber dependencies -->
@@ -15,7 +15,12 @@
             <artifactId>cucumber-java</artifactId>
             <version>1.2.5</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.11.0</version>
+        </dependency>
         <!-- These are the cucumber-junit dependencies -->
         <dependency>
             <groupId>info.cukes</groupId>
