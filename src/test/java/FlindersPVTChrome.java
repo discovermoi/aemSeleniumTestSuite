@@ -26,6 +26,46 @@ public class FlindersPVTChrome {
     }
 
     @Test
+    public void Case2_SearchBarTest() {
+        driver.get("http://www.flinders.edu.au");
+        driver.findElement(By.id("searchbarq")).clear();
+        driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
+        driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER);
+        // Unable to access Search Icon so used ENTER key
+    }
+
+    @Test
+    public void Case3_NavMenuAndContainedLinksTest() {
+        driver.get("http://www.flinders.edu.au");
+        WebElement study = driver.findElement(By.partialLinkText("Study"));
+        WebElement research = driver.findElement(By.partialLinkText("Research"));
+        WebElement engage = driver.findElement(By.partialLinkText("Engage"));
+        WebElement alumni = driver.findElement(By.partialLinkText("Alumni"));
+        WebElement about = driver.findElement(By.partialLinkText("About"));
+        WebElement quicklinks = driver.findElement(By.partialLinkText("Quick"));
+        WebElement topsearch = driver.findElement(By.className("header_search_top"));
+
+
+        builder.moveToElement(study).pause(100).perform();
+        builder.moveToElement(research).pause(100).perform();
+        builder.moveToElement(engage).pause(100).perform();
+        builder.moveToElement(alumni).pause(100).perform();
+        builder.moveToElement(about).pause(100).perform();
+        builder.moveToElement(quicklinks).pause(100).perform();
+        topsearch.click();
+        // Need to check if the links are functional
+    }
+
+    @Test
+    public void Case4_WebsiteSearch() {
+        driver.get("http://www.flinders.edu.au");
+        WebElement topsearch = driver.findElement(By.className("header_search_top"));
+        topsearch.click();
+        driver.findElement(By.id("gsc-i-id1")).sendKeys("Psychology");
+        driver.findElement(By.id("gsc-i-id1")).sendKeys(Keys.ENTER);
+    }
+
+    @Test
     public void Case5_NewsPageTest(){
         driver.get("http://news.flinders.edu.au");
     }
@@ -70,46 +110,6 @@ public class FlindersPVTChrome {
         driver.get("http://events.flinders.edu.au");
         driver.get("http://www.flinders.edu.au/directory/main-display-search-form.cfm");
         driver.get("http://www.flinders.edu.au/people/john.roddick ");
-    }
-
-    @Test
-    public void Case2_SearchBarTest() {
-        driver.get("http://www.flinders.edu.au");
-        driver.findElement(By.id("searchbarq")).clear();
-        driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
-        driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER);
-        // Unable to access Search Icon so used ENTER key
-    }
-
-    @Test
-    public void Case3_NavMenuAndContainedLinksTest() {
-        driver.get("http://www.flinders.edu.au");
-        WebElement study = driver.findElement(By.partialLinkText("Study"));
-        WebElement research = driver.findElement(By.partialLinkText("Research"));
-        WebElement engage = driver.findElement(By.partialLinkText("Engage"));
-        WebElement alumni = driver.findElement(By.partialLinkText("Alumni"));
-        WebElement about = driver.findElement(By.partialLinkText("About"));
-        WebElement quicklinks = driver.findElement(By.partialLinkText("Quick"));
-        WebElement topsearch = driver.findElement(By.className("header_search_top"));
-
-
-        builder.moveToElement(study).pause(100).perform();
-        builder.moveToElement(research).pause(100).perform();
-        builder.moveToElement(engage).pause(100).perform();
-        builder.moveToElement(alumni).pause(100).perform();
-        builder.moveToElement(about).pause(100).perform();
-        builder.moveToElement(quicklinks).pause(100).perform();
-        topsearch.click();
-        // Need to check if the links are functional
-    }
-
-    @Test
-    public void Case4_WebsiteSearch() {
-        driver.get("http://www.flinders.edu.au");
-        WebElement topsearch = driver.findElement(By.className("header_search_top"));
-        topsearch.click();
-        driver.findElement(By.id("gsc-i-id1")).sendKeys("Psychology");
-        driver.findElement(By.id("gsc-i-id1")).sendKeys(Keys.ENTER);
     }
 
 }
