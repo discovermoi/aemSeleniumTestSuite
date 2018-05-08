@@ -11,10 +11,13 @@ This Project aims at:
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 public class FlindersPVTChrome {
     ChromeDriver driver=new ChromeDriver();
+    Actions builder = new Actions(driver);
 
     @Test
     public void Case1_OpenHomePageTest(){
@@ -75,6 +78,27 @@ public class FlindersPVTChrome {
         driver.findElement(By.id("searchbarq")).clear();
         driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
         driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER); // Unable to access Search Icon so used ENTER key
+    }
+
+    @Test
+    public void Case3_NavMenuAndContainedLinksTest() {
+        driver.get("http://www.flinders.edu.au");
+        WebElement study = driver.findElement(By.partialLinkText("Study"));
+        WebElement research = driver.findElement(By.partialLinkText("Research"));
+        WebElement engage = driver.findElement(By.partialLinkText("Engage"));
+        WebElement alumni = driver.findElement(By.partialLinkText("Alumni"));
+        WebElement about = driver.findElement(By.partialLinkText("About"));
+        WebElement quicklinks = driver.findElement(By.partialLinkText("Quick"));
+        WebElement topsearch = driver.findElement(By.className("header_search_top"));
+
+
+        builder.moveToElement(study).pause(100).perform();
+        builder.moveToElement(research).pause(100).perform();
+        builder.moveToElement(engage).pause(100).perform();
+        builder.moveToElement(alumni).pause(100).perform();
+        builder.moveToElement(about).pause(100).perform();
+        builder.moveToElement(quicklinks).pause(100).perform();
+        topsearch.click();
     }
 
 
