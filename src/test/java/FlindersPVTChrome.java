@@ -42,6 +42,7 @@ public class FlindersPVTChrome {
     @Test
     public void Case3_NavMenuAndContainedLinksTest() {
         driver.get("http://www.flinders.edu.au");
+
         WebElement study = driver.findElement(By.partialLinkText("Study"));
         WebElement research = driver.findElement(By.partialLinkText("Research"));
         WebElement engage = driver.findElement(By.partialLinkText("Engage"));
@@ -49,7 +50,6 @@ public class FlindersPVTChrome {
         WebElement about = driver.findElement(By.partialLinkText("About"));
         WebElement quicklinks = driver.findElement(By.partialLinkText("Quick"));
         WebElement topsearch = driver.findElement(By.className("header_search_top"));
-
 
         builder.moveToElement(study).pause(100).perform();
         builder.moveToElement(research).pause(100).perform();
