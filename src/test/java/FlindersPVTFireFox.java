@@ -12,27 +12,27 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class TestSelenium {
+public class FlindersPVTFireFox {
 
  @Test
     public void Case1_OpenHomePageTest(){
-     FirefoxDriver driver=new FirefoxDriver();
-     driver.get("http://www.flinders.edu.au");
+        FirefoxDriver driver=new FirefoxDriver();
+        driver.get("http://www.flinders.edu.au");
    }
 
  @Test
     public void Case19_checkLegacyCMSTest(){
-     FirefoxDriver driver=new FirefoxDriver();
-     driver.get("http://www.flinders.edu.au/library");
-     driver.get("http://www.flinders.edu.au/ehl");
-     driver.get("http://www.flinders.edu.au/medicine");
-     driver.get("http://www.flinders.edu.au/nursing");
-     driver.get("http://www.flinders.edu.au/sohs");
-     driver.get("http://www.flinders.edu.au/sabs");
-     driver.get("http://www.flinders.edu.au/science_engineering");
+        FirefoxDriver driver=new FirefoxDriver();
+        driver.get("http://www.flinders.edu.au/library");
+        driver.get("http://www.flinders.edu.au/ehl");
+        driver.get("http://www.flinders.edu.au/medicine");
+        driver.get("http://www.flinders.edu.au/nursing");
+        driver.get("http://www.flinders.edu.au/sohs");
+        driver.get("http://www.flinders.edu.au/sabs");
+        driver.get("http://www.flinders.edu.au/science_engineering");
  }
 
-    @Test
+  @Test
     public void Case20_keyApplicationsOutofScope(){
         FirefoxDriver driver=new FirefoxDriver();
         driver.get("http://events.flinders.edu.au");
