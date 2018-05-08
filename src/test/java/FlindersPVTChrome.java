@@ -11,6 +11,7 @@ This Project aims at:
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -120,6 +121,9 @@ public class FlindersPVTChrome {
     public void Case12To14_ViewallCoursesTest() {
         driver.get("http://www.flinders.edu.au/international/arts");
         driver.findElement(By.partialLinkText("View all courses")).click();
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".course_information_list li a")));
+        String courseURL = driver.findElement(By.cssSelector(".course_information_list li a")).getAttribute("href");
+        driver.get(courseURL);
     }
 
     @Test
