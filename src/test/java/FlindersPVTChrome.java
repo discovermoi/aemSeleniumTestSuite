@@ -14,10 +14,15 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class FlindersPVTChrome {
     ChromeDriver driver=new ChromeDriver();
     Actions builder = new Actions(driver);
+    WebDriverWait webDriverWait = new WebDriverWait(driver,10);
 
     @Test
     public void Case1_OpenHomePageTest(){
@@ -92,6 +97,23 @@ public class FlindersPVTChrome {
         driver.get("https://www.flinders.edu.au/international/contact-us");
         driver.get("https://www.flinders.edu.au/employment/professional");
         driver.get("https://www.flinders.edu.au/study/apply/credit-transfer");
+    }
+
+    @Test
+    public void Case9To10_SearchForCommerceinCoursePagesTest(){
+        driver.get("http://www.flinders.edu.au/courses/");
+        driver.findElement(By.id("q")).sendKeys("Commerce");
+        driver.findElement(By.id("q")).sendKeys(Keys.ENTER);
+        driver.findElement(By.partialLinkText("Bachelor of Commerce")).click();
+        webDriverWait.until(ExpectedConditions.urlContains("courses"));
+        driver.findElement(By.partialLinkText("Study")).click();
+    }
+
+    @Test
+    public void Case11_ClickOnBusinessCourse() {
+        driver.get("http://www.flinders.edu.au/study");
+        builder.moveToElement(driver.findElement(By.id("main-item"))).pause(10).perform();
+        driver.findElement(By.partialLinkText("Business, commerce and management")).click();
     }
 
     @Test
