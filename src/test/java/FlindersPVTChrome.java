@@ -35,6 +35,7 @@ public class FlindersPVTChrome {
         driver.findElement(By.id("searchbarq")).clear();
         driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
         driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER);
+        driver.close();
         // Unable to access Search Icon so used ENTER key
     }
 
@@ -57,6 +58,7 @@ public class FlindersPVTChrome {
         builder.moveToElement(about).pause(100).perform();
         builder.moveToElement(quicklinks).pause(100).perform();
         topsearch.click();
+        driver.close();
         // Need to check if the links are functional
     }
 
@@ -67,11 +69,13 @@ public class FlindersPVTChrome {
         topsearch.click();
         driver.findElement(By.id("gsc-i-id1")).sendKeys("Psychology");
         driver.findElement(By.id("gsc-i-id1")).sendKeys(Keys.ENTER);
+        driver.close();
     }
 
     @Test
     public void Case5_NewsPageTest(){
         driver.get("http://news.flinders.edu.au");
+        driver.close();
     }
 
     @Test
@@ -82,6 +86,7 @@ public class FlindersPVTChrome {
         driver.get("https://www.flinders.edu.au/international");
         driver.get("https://www.flinders.edu.au/international/arts");
         driver.get("https://www.flinders.edu.au/international/business-commerce-management");
+        driver.close();
     }
 
     @Test
@@ -89,6 +94,7 @@ public class FlindersPVTChrome {
         driver.get("https://www.flinders.edu.au/research");
         driver.get("https://www.flinders.edu.au/research/engineering-and-technology");
         driver.get("https://www.flinders.edu.au/research/research-impact");
+        driver.close();
     }
 
     @Test
@@ -96,16 +102,20 @@ public class FlindersPVTChrome {
         driver.get("https://www.flinders.edu.au/international/contact-us");
         driver.get("https://www.flinders.edu.au/employment/professional");
         driver.get("https://www.flinders.edu.au/study/apply/credit-transfer");
+        driver.close();
     }
 
     @Test
     public void Case9To10_SearchForCommerceinCoursePagesTest(){
-        driver.get("http://www.flinders.edu.au/courses/");
+        driver.get("http://www.flinders.edu.au/courses");
         driver.findElement(By.id("q")).sendKeys("Commerce");
         driver.findElement(By.id("q")).sendKeys(Keys.ENTER);
-        driver.findElement(By.partialLinkText("Bachelor of Commerce")).click();
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".sj-result-title a")));
+        String courseURL = driver.findElement(By.cssSelector(".sj-result-title a")).getAttribute("href");
+        driver.get(courseURL);
         webDriverWait.until(ExpectedConditions.urlContains("courses"));
         driver.findElement(By.partialLinkText("Study")).click();
+        driver.close();
     }
 
     @Test
@@ -113,6 +123,7 @@ public class FlindersPVTChrome {
         driver.get("http://www.flinders.edu.au/study");
         builder.moveToElement(driver.findElement(By.id("main-item"))).pause(5).perform();
         driver.findElement(By.partialLinkText("Business, commerce and management")).click();
+        driver.close();
     }
 
     @Test
@@ -126,6 +137,7 @@ public class FlindersPVTChrome {
         driver.navigate().refresh();
         driver.findElement(By.partialLinkText("Postgraduate")).click();
         driver.get(courseURL);
+        driver.close();
     }
 
     @Test
@@ -143,6 +155,7 @@ public class FlindersPVTChrome {
         driver.findElement(By.id("label_input_19_1")).click();
         driver.findElement(By.id("input_33")).click();
         webDriverWait.until(ExpectedConditions.urlContains("thank-you"));
+        driver.close();
     }
 
     @Test
@@ -167,6 +180,7 @@ public class FlindersPVTChrome {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("input_13")));
         driver.findElement(By.id("input_13")).click();
         webDriverWait.until(ExpectedConditions.urlContains("thank-you"));
+        driver.close();
     }
 
     @Test
@@ -178,6 +192,7 @@ public class FlindersPVTChrome {
         driver.get("http://www.flinders.edu.au/sohs");
         driver.get("http://www.flinders.edu.au/sabs");
         driver.get("http://www.flinders.edu.au/science_engineering");
+        driver.close();
     }
 
     @Test
@@ -185,6 +200,7 @@ public class FlindersPVTChrome {
         driver.get("http://events.flinders.edu.au");
         driver.get("http://www.flinders.edu.au/directory/main-display-search-form.cfm");
         driver.get("http://www.flinders.edu.au/people/john.roddick ");
+        driver.close();
     }
 
 }
