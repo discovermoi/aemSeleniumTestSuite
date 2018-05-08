@@ -22,6 +22,7 @@ public class FlindersPVTChrome {
     ChromeDriver driver=new ChromeDriver();
     Actions builder = new Actions(driver);
     WebDriverWait webDriverWait = new WebDriverWait(driver,10);
+    WebDriverWait webDriverWaitForAuthor = new WebDriverWait(driver,20);
 
     @Test
     public void Case1_OpenHomePageTest(){
@@ -201,6 +202,14 @@ public class FlindersPVTChrome {
         driver.get("http://www.flinders.edu.au/directory/main-display-search-form.cfm");
         driver.get("http://www.flinders.edu.au/people/john.roddick ");
         driver.close();
+    }
+
+    // Author Tests
+
+    @Test
+    public void ProdAuthorTests(){
+        driver.get("https://author.flinders.edu.au/projects.html/content/projects");
+        webDriverWaitForAuthor.until(ExpectedConditions.urlToBe("https://author.flinders.edu.au/projects.html/content/projects"));
     }
 
 }

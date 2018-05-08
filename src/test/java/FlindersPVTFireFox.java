@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FlindersPVTFireFox {
-    FirefoxDriver driver=new FirefoxDriver();
+    /*FirefoxDriver driver=new FirefoxDriver();
     Actions builder = new Actions(driver);
     WebDriverWait webDriverWait = new WebDriverWait(driver,10);
 
@@ -202,5 +202,5 @@ public class FlindersPVTFireFox {
         driver.get("http://www.flinders.edu.au/people/john.roddick ");
         driver.close();
     }
-
+*/
 }
