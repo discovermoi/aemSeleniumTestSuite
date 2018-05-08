@@ -103,5 +103,13 @@ public class FlindersPVTChrome {
         // Need to check if the links are functional
     }
 
+    @Test
+    public void Case4_WebsiteSearch() {
+        driver.get("http://www.flinders.edu.au");
+        WebElement topsearch = driver.findElement(By.className("header_search_top"));
+        topsearch.click();
+        driver.findElement(By.id("gsc-i-id1")).sendKeys("Psychology");
+        driver.findElement(By.id("gsc-i-id1")).sendKeys(Keys.ENTER);
+    }
 
 }
