@@ -11,18 +11,25 @@ This Project aims at:
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class TestSelenium {
 
  @Test
- public void Test(){
+    public void OpenHomePageTest(){
      FirefoxDriver driver=new FirefoxDriver();
      driver.get("http://www.flinders.edu.au");
    }
 
-        /*driver.findElement(By.id("username")).clear();
-        driver.findElement(By.id("username")).sendKeys("admin");
-        driver.findElement(By.id("password")).clear();
-        driver.findElement(By.id("password")).sendKeys("admin");
-        driver.findElement(By.id("submit-button")).click();*/
+ @Test
+    public void checkLegacyCMSTest(){
+     FirefoxDriver driver=new FirefoxDriver();
+     driver.get("http://www.flinders.edu.au/library");
+     driver.get("http://www.flinders.edu.au/ehl");
+     driver.get("http://www.flinders.edu.au/medicine");
+     driver.get("http://www.flinders.edu.au/nursing");
+     driver.get("http://www.flinders.edu.au/sohs");
+     driver.get("http://www.flinders.edu.au/sabs");
+     driver.get("http://www.flinders.edu.au/science_engineering");
+ }
 
 }
