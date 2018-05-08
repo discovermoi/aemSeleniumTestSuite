@@ -18,6 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class FlindersPVTChrome {
@@ -123,6 +124,10 @@ public class FlindersPVTChrome {
         driver.findElement(By.partialLinkText("View all courses")).click();
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".course_information_list li a")));
         String courseURL = driver.findElement(By.cssSelector(".course_information_list li a")).getAttribute("href");
+        driver.get(courseURL);
+        driver.navigate().back();
+        driver.navigate().refresh();
+        driver.findElement(By.partialLinkText("Postgraduate")).click();
         driver.get(courseURL);
     }
 
