@@ -5,13 +5,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class smokeTest {
     WebDriver driver;
     @Given("^Open browser and start the aem instance$")
     public void open_browser_and_start_the_aem_instance() throws Throwable {
-        driver=new FirefoxDriver();
+        driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://localhost:4502/editor.html/content/flinders/en.html");
     }

@@ -1,4 +1,4 @@
-Feature: Login to an ame instance
+Feature: Login to an aem instance
 
   Scenario: Test Login with valid credentials
     Given Open browser and start the aem instance
