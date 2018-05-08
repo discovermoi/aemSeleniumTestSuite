@@ -11,16 +11,12 @@ This Project aims at:
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class FlindersPVTChrome {
     ChromeDriver driver=new ChromeDriver();
@@ -152,6 +148,25 @@ public class FlindersPVTChrome {
     @Test
     public void Case18_ContactUs() {
         driver.get("https://www.flinders.edu.au/study-online/contact-us");
+        WebElement iframeSwitch = driver.findElement(By.id("73197275973875"));
+        driver.switchTo().frame(iframeSwitch);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".form-all")));
+        driver.findElement(By.id("input_2")).sendKeys("Web Transformation");
+        driver.findElement(By.id("input_4")).sendKeys("someemail@someemail.com");
+        driver.findElement(By.id("input_5")).sendKeys("0808080808");
+        driver.findElement(By.id("input_7")).sendKeys("Thursday After 5 PM");
+        driver.findElement(By.id("input_3")).sendKeys("5042");
+        driver.findElement(By.id("label_input_8_1")).click();
+        Select courseOfInterest = new Select(driver.findElement(By.id("input_10")));
+        courseOfInterest.selectByIndex(1);
+        driver.findElement(By.id("input_12")).sendKeys("No I dont have any questions");
+        // Second Dropdown Population - wait time...
+        webDriverWait.until(ExpectedConditions.presenceOfNestedElementLocatedBy(By.id("input_15"),By.tagName("option")));
+        Select studyPeriod = new Select(driver.findElement(By.id("input_15")));
+        studyPeriod.selectByIndex(1);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(By.id("input_13")));
+        driver.findElement(By.id("input_13")).click();
+        webDriverWait.until(ExpectedConditions.urlContains("thank-you"));
     }
 
     @Test
