@@ -16,6 +16,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -134,6 +135,18 @@ public class FlindersPVTChrome {
     @Test
     public void Case17_FeedbackSubmit() {
         driver.get("https://www.flinders.edu.au/website-feedback");
+        WebElement iframeSwitch = driver.findElement(By.id("73321130540844"));
+        driver.switchTo().frame(iframeSwitch);
+        webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".form-all")));
+        Select areYouDropdown = new Select(driver.findElement(By.id("input_2")));
+        areYouDropdown.selectByIndex(1);
+        driver.findElement(By.id("input_36_5")).click();
+        driver.findElement(By.id("input_37_5")).click();
+        driver.findElement(By.id("input_41_5")).click();
+        driver.findElement(By.id("input_18")).sendKeys("General Comments and feedback inputed from machine");
+        driver.findElement(By.id("label_input_19_1")).click();
+        driver.findElement(By.id("input_33")).click();
+        webDriverWait.until(ExpectedConditions.urlContains("thank-you"));
     }
 
     @Test
