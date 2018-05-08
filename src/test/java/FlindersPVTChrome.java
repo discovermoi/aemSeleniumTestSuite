@@ -10,19 +10,49 @@ This Project aims at:
 */
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class FlindersPVTChrome {
+    ChromeDriver driver=new ChromeDriver();
 
     @Test
     public void Case1_OpenHomePageTest(){
-        ChromeDriver driver=new ChromeDriver();
+
         driver.get("http://www.flinders.edu.au");
     }
 
     @Test
-    public void Case19_checkLegacyCMSTest(){
-        ChromeDriver driver=new ChromeDriver();
+    public void Case5_NewsPageTest(){
+        driver.get("http://news.flinders.edu.au");
+    }
+
+    @Test
+    public void Case6_StudyAndInternational(){
+        driver.get("https://www.flinders.edu.au/study");
+        driver.get("https://www.flinders.edu.au/study/arts");
+        driver.get("https://www.flinders.edu.au/study/business-commerce-management");
+        driver.get("https://www.flinders.edu.au/international");
+        driver.get("https://www.flinders.edu.au/international/arts");
+        driver.get("https://www.flinders.edu.au/international/business-commerce-management");
+    }
+
+    @Test
+    public void Case7_ReserachAreaPagesTest(){
+        driver.get("https://www.flinders.edu.au/research");
+        driver.get("https://www.flinders.edu.au/research/engineering-and-technology");
+        driver.get("https://www.flinders.edu.au/research/research-impact");
+    }
+
+    @Test
+    public void Case8_IFrameContentTest(){
+        driver.get("https://www.flinders.edu.au/international/contact-us");
+        driver.get("https://www.flinders.edu.au/employment/professional");
+        driver.get("https://www.flinders.edu.au/study/apply/credit-transfer");
+    }
+
+    @Test
+    public void Case19_LegacyCMSTest(){
         driver.get("http://www.flinders.edu.au/library");
         driver.get("http://www.flinders.edu.au/ehl");
         driver.get("http://www.flinders.edu.au/medicine");
@@ -33,14 +63,19 @@ public class FlindersPVTChrome {
     }
 
     @Test
-    public void Case20_keyApplicationsOutofScope(){
-        ChromeDriver driver=new ChromeDriver();
+    public void Case20_KeyApplicationsOutofScopeTest(){
         driver.get("http://events.flinders.edu.au");
         driver.get("http://www.flinders.edu.au/directory/main-display-search-form.cfm");
         driver.get("http://www.flinders.edu.au/people/john.roddick ");
     }
 
-
+    @Test
+    public void Case2_SearchBarTest() {
+        driver.get("http://www.flinders.edu.au");
+        driver.findElement(By.id("searchbarq")).clear();
+        driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
+        driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER); // Unable to access Search Icon so used ENTER key
+    }
 
 
 }
