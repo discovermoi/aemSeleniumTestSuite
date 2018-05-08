@@ -77,7 +77,8 @@ public class FlindersPVTChrome {
         driver.get("http://www.flinders.edu.au");
         driver.findElement(By.id("searchbarq")).clear();
         driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
-        driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER); // Unable to access Search Icon so used ENTER key
+        driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER);
+        // Unable to access Search Icon so used ENTER key
     }
 
     @Test
@@ -99,6 +100,7 @@ public class FlindersPVTChrome {
         builder.moveToElement(about).pause(100).perform();
         builder.moveToElement(quicklinks).pause(100).perform();
         topsearch.click();
+        // Need to check if the links are functional
     }
 
 
