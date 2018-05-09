@@ -26,8 +26,8 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case1_OpenHomePageTest(){
-
         driver.get("http://www.flinders.edu.au");
+        driver.close();
     }
 
     @Test
