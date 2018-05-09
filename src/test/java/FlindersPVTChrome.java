@@ -18,6 +18,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class FlindersPVTChrome {
     ChromeDriver driver=new ChromeDriver();
     Actions builder = new Actions(driver);
@@ -206,7 +208,7 @@ public class FlindersPVTChrome {
 
     // Author Tests
 
-    /*@Test
+    @Test
     public void ProdAuthorTests(){
         driver.get("https://author.flinders.edu.au/projects.html/content/projects");
         webDriverWaitForAuthor.until(ExpectedConditions.urlToBe("https://author.flinders.edu.au/projects.html/content/projects"));
@@ -220,7 +222,7 @@ public class FlindersPVTChrome {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/accordion']")));
         driver.findElement(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/accordion']")).click();
 
-        // Insert Section - Issue is the parsys found is random; need to control it...
+        /*driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);// Insert Section - Issue is the parsys found is random; need to control it...
         webDriverWaitForAuthor.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-text='Drag components here']")));
         driver.findElement(By.cssSelector("div[data-text='Drag components here']")).click();
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("button[data-action='INSERT']")));
@@ -236,6 +238,7 @@ public class FlindersPVTChrome {
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/step-by-step']")));
         driver.findElement(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/step-by-step']")).click();
         // Click on Plus icon, add components, remove components and Publish
-    } */
+     */
+    }
 
 }
