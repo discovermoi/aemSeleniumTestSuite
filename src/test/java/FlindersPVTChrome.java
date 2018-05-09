@@ -210,6 +210,10 @@ public class FlindersPVTChrome {
     public void ProdAuthorTests(){
         driver.get("https://author.flinders.edu.au/projects.html/content/projects");
         webDriverWaitForAuthor.until(ExpectedConditions.urlToBe("https://author.flinders.edu.au/projects.html/content/projects"));
+        driver.get("https://author.flinders.edu.au/editor.html/content/flinders/en/about.html");
+        builder.pause(10).perform();
+        webDriverWaitForAuthor.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-text='Drag components here']")));
+        driver.findElement(By.cssSelector("div[data-text='Drag components here']")).click();
     }
 
 }
