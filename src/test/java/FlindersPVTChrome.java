@@ -18,8 +18,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
-
 public class FlindersPVTChrome {
     ChromeDriver driver=new ChromeDriver();
     Actions builder = new Actions(driver);
@@ -28,13 +26,13 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case1_OpenHomePageTest(){
-        driver.get("http://www.flinders.edu.au");
+        driver.get("http://stage.flinders.edu.au");
         driver.close();
     }
 
     @Test
     public void Case2_SearchBarTest() {
-        driver.get("http://www.flinders.edu.au");
+        driver.get("http://stage.flinders.edu.au");
         driver.findElement(By.id("searchbarq")).clear();
         driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
         driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER);
@@ -46,7 +44,7 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case3_NavMenuAndContainedLinksTest() {
-        driver.get("http://www.flinders.edu.au");
+        driver.get("http://stage.flinders.edu.au");
 
         WebElement study = driver.findElement(By.partialLinkText("Study"));
         WebElement research = driver.findElement(By.partialLinkText("Research"));
@@ -69,7 +67,7 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case4_WebsiteSearch() {
-        driver.get("http://www.flinders.edu.au");
+        driver.get("http://stage.flinders.edu.au");
         WebElement topsearch = driver.findElement(By.className("header_search_top"));
         topsearch.click();
         driver.findElement(By.id("gsc-i-id1")).sendKeys("Psychology");
@@ -79,40 +77,40 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case5_NewsPageTest(){
-        driver.get("http://news.flinders.edu.au");
+        driver.get("http://stage.news.flinders.edu.au");
         driver.close();
     }
 
     @Test
     public void Case6_StudyAndInternational(){
-        driver.get("https://www.flinders.edu.au/study");
-        driver.get("https://www.flinders.edu.au/study/arts");
-        driver.get("https://www.flinders.edu.au/study/business-commerce-management");
-        driver.get("https://www.flinders.edu.au/international");
-        driver.get("https://www.flinders.edu.au/international/arts");
-        driver.get("https://www.flinders.edu.au/international/business-commerce-management");
+        driver.get("https://stage.flinders.edu.au/study");
+        driver.get("https://stage.flinders.edu.au/study/arts");
+        driver.get("https://stage.flinders.edu.au/study/business-commerce-management");
+        driver.get("https://stage.flinders.edu.au/international");
+        driver.get("https://stage.flinders.edu.au/international/arts");
+        driver.get("https://stage.flinders.edu.au/international/business-commerce-management");
         driver.close();
     }
 
     @Test
     public void Case7_ReserachAreaPagesTest(){
-        driver.get("https://www.flinders.edu.au/research");
-        driver.get("https://www.flinders.edu.au/research/engineering-and-technology");
-        driver.get("https://www.flinders.edu.au/research/research-impact");
+        driver.get("https://stage.flinders.edu.au/research");
+        driver.get("https://stage.flinders.edu.au/research/engineering-and-technology");
+        driver.get("https://stage.flinders.edu.au/research/research-impact");
         driver.close();
     }
 
     @Test
     public void Case8_IFrameContentTest(){
-        driver.get("https://www.flinders.edu.au/international/contact-us");
-        driver.get("https://www.flinders.edu.au/employment/professional");
-        driver.get("https://www.flinders.edu.au/study/apply/credit-transfer");
+        driver.get("https://stage.flinders.edu.au/international/contact-us");
+        driver.get("https://stage.flinders.edu.au/employment/professional");
+        driver.get("https://stage.flinders.edu.au/study/apply/credit-transfer");
         driver.close();
     }
 
     @Test
     public void Case9To10_SearchForCommerceinCoursePagesTest(){
-        driver.get("http://www.flinders.edu.au/courses");
+        driver.get("http://stage.flinders.edu.au/courses");
         driver.findElement(By.id("q")).sendKeys("Commerce");
         driver.findElement(By.id("q")).sendKeys(Keys.ENTER);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".sj-result-title a")));
@@ -125,7 +123,7 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case11_ClickOnBusinessCourseTest() {
-        driver.get("http://www.flinders.edu.au/study");
+        driver.get("http://stage.flinders.edu.au/study");
         builder.moveToElement(driver.findElement(By.id("main-item"))).pause(5).perform();
         driver.findElement(By.partialLinkText("Business, commerce and management")).click();
         driver.close();
@@ -133,7 +131,7 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case12To14_ViewallCoursesTest() {
-        driver.get("http://www.flinders.edu.au/international/arts");
+        driver.get("http://stage.flinders.edu.au/international/arts");
         driver.findElement(By.partialLinkText("View all courses")).click();
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".course_information_list li a")));
         String courseURL = driver.findElement(By.cssSelector(".course_information_list li a")).getAttribute("href");
@@ -147,7 +145,7 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case17_FeedbackSubmit() {
-        driver.get("https://www.flinders.edu.au/website-feedback");
+        driver.get("https://stage.flinders.edu.au/website-feedback");
         WebElement iframeSwitch = driver.findElement(By.id("73321130540844"));
         driver.switchTo().frame(iframeSwitch);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".form-all")));
@@ -165,7 +163,7 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case18_ContactUs() {
-        driver.get("https://www.flinders.edu.au/study-online/contact-us");
+        driver.get("https://stage.flinders.edu.au/study-online/contact-us");
         WebElement iframeSwitch = driver.findElement(By.id("73197275973875"));
         driver.switchTo().frame(iframeSwitch);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".form-all")));
@@ -190,32 +188,32 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case19_LegacyCMSTest(){
-        driver.get("http://www.flinders.edu.au/library");
-        driver.get("http://www.flinders.edu.au/ehl");
-        driver.get("http://www.flinders.edu.au/medicine");
-        driver.get("http://www.flinders.edu.au/nursing");
-        driver.get("http://www.flinders.edu.au/sohs");
-        driver.get("http://www.flinders.edu.au/sabs");
-        driver.get("http://www.flinders.edu.au/science_engineering");
+        driver.get("http://stage.flinders.edu.au/library");
+        driver.get("http://stage.flinders.edu.au/ehl");
+        driver.get("http://stage.flinders.edu.au/medicine");
+        driver.get("http://stage.flinders.edu.au/nursing");
+        driver.get("http://stage.flinders.edu.au/sohs");
+        driver.get("http://stage.flinders.edu.au/sabs");
+        driver.get("http://stage.flinders.edu.au/science_engineering");
         driver.close();
     }
 
     @Test
     public void Case20_KeyApplicationsOutofScopeTest(){
-        driver.get("http://events.flinders.edu.au");
-        driver.get("http://www.flinders.edu.au/directory/main-display-search-form.cfm");
-        driver.get("http://www.flinders.edu.au/people/john.roddick ");
+        driver.get("http://stage.events.flinders.edu.au");
+        driver.get("http://stage.flinders.edu.au/directory/main-display-search-form.cfm");
+        driver.get("http://stage.flinders.edu.au/people/john.roddick ");
         driver.close();
     }
 
     // Author Tests
 
-    @Test
+    /*@Test
     public void ProdAuthorTests(){
-        driver.get("https://author.flinders.edu.au/projects.html/content/projects");
-        webDriverWaitForAuthor.until(ExpectedConditions.urlToBe("https://author.flinders.edu.au/projects.html/content/projects"));
-        driver.get("https://author.flinders.edu.au/editor.html/content/flinders/en/about.html");
-        builder.pause(10).perform();
+        //driver.get("https://stage.author.flinders.edu.au/projects.html/content/projects");
+        //webDriverWaitForAuthor.until(ExpectedConditions.urlToBe("https://stage.author.flinders.edu.au/projects.html/content/projects"));
+        driver.get("https://stage-author.flinders.edu.au/editor.html/content/flinders/en/about.html");
+        //builder.pause(10).perform();
         // Insert Accordion - Issue is the parsys found is random; need to control it...
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div[data-text='Drag components here']")));
         driver.findElement(By.cssSelector("div[data-text='Drag components here']")).click();
@@ -223,6 +221,6 @@ public class FlindersPVTChrome {
         driver.findElement(By.cssSelector("button[data-action='INSERT']")).click();
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/accordion']")));
         driver.findElement(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/accordion']")).click();
-    }
+    }*/
 
 }
