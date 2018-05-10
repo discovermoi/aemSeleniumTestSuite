@@ -38,6 +38,8 @@ public class FlindersPVTChrome {
         driver.findElement(By.id("searchbarq")).clear();
         driver.findElement(By.id("searchbarq")).sendKeys("Accounting");
         driver.findElement(By.id("searchbarq")).sendKeys(Keys.ENTER);
+        //webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("div.current")));
+        //driver.findElement(By.cssSelector("div.current")).click();
         driver.close();
         // Unable to access Search Icon so used ENTER key
     }
