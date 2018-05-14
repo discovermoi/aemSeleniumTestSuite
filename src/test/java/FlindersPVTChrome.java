@@ -23,10 +23,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class FlindersPVTChrome {
-    FirefoxDriver driver=new FirefoxDriver();
+    /*FirefoxDriver driver=new FirefoxDriver();
     Actions builder = new Actions(driver);
     WebDriverWait webDriverWait = new WebDriverWait(driver,10);
-    WebDriverWait webDriverWaitForAuthor = new WebDriverWait(driver,20);
+    WebDriverWait webDriverWaitForAuthor = new WebDriverWait(driver,20);*/
 
     @Test
     public void Case1_OpenHomePageTest(){
@@ -41,7 +41,7 @@ public class FlindersPVTChrome {
         }
     }
 
-    @Test
+    /*@Test
     public void Case2_SearchBarTest() {
         driver.get("http://stage.flinders.edu.au");
         driver.findElement(By.id("searchbarq")).clear();
