@@ -30,12 +30,6 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case1_OpenHomePageTest(){
-        WebDriver driver = new FirefoxDriver();
-        Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
-        String browserName = caps.getBrowserName();
-        String browserVersion = caps.getVersion();
-        System.out.println(browserName+" "+browserVersion);
-
         try {
                 DesiredCapabilities capability = DesiredCapabilities.chrome();
                 WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capability);
