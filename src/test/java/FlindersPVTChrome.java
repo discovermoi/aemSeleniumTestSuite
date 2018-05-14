@@ -30,16 +30,21 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case1_OpenHomePageTest(){
-        DesiredCapabilities capability = DesiredCapabilities.firefox();
-        capability.setCapability("platform", Platform.ANY);
+        WebDriver driver = new FirefoxDriver();
+        Capabilities caps = ((RemoteWebDriver) driver).getCapabilities();
+        String browserName = caps.getBrowserName();
+        String browserVersion = caps.getVersion();
+        System.out.println(browserName+" "+browserVersion);
+
         try {
-            WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capability);
-            driverJ.get("http://stage.flinders.edu.au");
-            driverJ.close();
-        }catch (MalformedURLException exception){
-            throw new RuntimeException(exception);
+                DesiredCapabilities capability = DesiredCapabilities.chrome();
+                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capability);
+                driverJ.get("http://stage.flinders.edu.au");
+                driverJ.close();
+            }catch (MalformedURLException exception){
+                throw new RuntimeException(exception);
+            }
         }
-    }
 
     /*@Test
     public void Case2_SearchBarTest() {
