@@ -35,8 +35,6 @@ public class FlindersPVTChrome {
                 System.out.println("Hiii  " +capability.getBrowserName());
                 System.out.println("Hiii  " +capability.getVersion());
                 WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capability);
-                System.out.println("Hiii  " +capability.getBrowserName());
-                System.out.println("Hiii  " +capability.getVersion());
                 driverJ.get("http://stage.flinders.edu.au");
                 driverJ.close();
             }catch (MalformedURLException exception){
