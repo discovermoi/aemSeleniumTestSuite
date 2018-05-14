@@ -9,10 +9,7 @@ This Project aims at:
     = it helps in creating pages for authoring and destroys it after testing.
 */
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -34,6 +31,7 @@ public class FlindersPVTChrome {
     @Test
     public void Case1_OpenHomePageTest(){
         DesiredCapabilities capability = DesiredCapabilities.firefox();
+        capability.setCapability("platform", Platform.ANY);
         try {
             WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capability);
             driverJ.get("http://stage.flinders.edu.au");
