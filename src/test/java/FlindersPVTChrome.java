@@ -33,7 +33,7 @@ public class FlindersPVTChrome {
         try {
                 DesiredCapabilities capability = DesiredCapabilities.chrome();
                 System.out.println("Browser Name  " +capability.getBrowserName());
-                System.out.println("Browser version " +capability.getVersion().toString());
+                System.out.println("Browser version " +capability.getVersion().toLowerCase());
                 WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444"), capability);
                 driverJ.get("http://stage.flinders.edu.au");
                 driverJ.close();
