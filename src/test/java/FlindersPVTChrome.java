@@ -32,8 +32,8 @@ public class FlindersPVTChrome {
     public void Case1_OpenHomePageTest(){
         try {
                 DesiredCapabilities capability = DesiredCapabilities.chrome();
-                System.out.println("Hiii  " +capability.getBrowserName());
-                System.out.println("Hiii  " +capability.getVersion());
+                System.out.println("Browser Name  " +capability.getBrowserName());
+                System.out.println("Browser version " +capability.getVersion());
                 WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capability);
                 driverJ.get("http://stage.flinders.edu.au");
                 driverJ.close();
@@ -42,7 +42,9 @@ public class FlindersPVTChrome {
             }
         }
 
-    /*@Test
+    /* To be uncommented
+
+    @Test
     public void Case2_SearchBarTest() {
         driver.get("http://stage.flinders.edu.au");
         driver.findElement(By.id("searchbarq")).clear();
@@ -220,7 +222,7 @@ public class FlindersPVTChrome {
 
     // Author Tests
 
-    /*@Test
+    @Test
     public void ProdAuthorTests(){
         //driver.get("https://stage.author.flinders.edu.au/projects.html/content/projects");
         //webDriverWaitForAuthor.until(ExpectedConditions.urlToBe("https://stage.author.flinders.edu.au/projects.html/content/projects"));
@@ -233,6 +235,7 @@ public class FlindersPVTChrome {
         driver.findElement(By.cssSelector("button[data-action='INSERT']")).click();
         webDriverWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/accordion']")));
         driver.findElement(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/accordion']")).click();
-    }*/
+    }
+    */
 
 }
