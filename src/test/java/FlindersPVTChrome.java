@@ -32,10 +32,9 @@ public class FlindersPVTChrome {
     @Test
     public void Case1_OpenHomePageTest(){
         try {
-                DesiredCapabilities capability = DesiredCapabilities.chrome();
-                System.out.println("Browser Name  " +capability.getBrowserName());
-                System.out.println("Browser version " +capability.getVersion().toLowerCase());
-                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/grid/api/hub"), capability);
+            ChromeOptions options = new ChromeOptions();
+            options.setBinary("tools/chromedriver/chromedriver.exe");
+                RemoteWebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/grid/api/hub"), new ChromeOptions());
                 driverJ.get("http://stage.flinders.edu.au");
                 driverJ.close();
             }catch (MalformedURLException exception){
