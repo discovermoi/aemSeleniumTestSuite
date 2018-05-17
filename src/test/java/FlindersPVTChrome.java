@@ -11,6 +11,7 @@ This Project aims at:
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -34,7 +35,7 @@ public class FlindersPVTChrome {
                 DesiredCapabilities capability = DesiredCapabilities.chrome();
                 System.out.println("Browser Name  " +capability.getBrowserName());
                 System.out.println("Browser version " +capability.getVersion().toLowerCase());
-                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4445"), capability);
+                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/grid/api/hub"), capability);
                 driverJ.get("http://stage.flinders.edu.au");
                 driverJ.close();
             }catch (MalformedURLException exception){
