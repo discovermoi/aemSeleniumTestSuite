@@ -34,7 +34,7 @@ public class FlindersPVTChrome {
         try {
             ChromeOptions options = new ChromeOptions();
             //options.setBinary("tools/chromedriver/chromedriver.exe");
-                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/grid/api/hub"), new ChromeOptions());
+                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), new ChromeOptions());
                 driverJ.get("http://stage.flinders.edu.au");
                 driverJ.close();
             }catch (MalformedURLException exception){
