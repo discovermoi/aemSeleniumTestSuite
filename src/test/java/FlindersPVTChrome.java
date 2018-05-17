@@ -24,6 +24,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class FlindersPVTChrome {
+
     /*FirefoxDriver driver=new FirefoxDriver();
     Actions builder = new Actions(driver);
     WebDriverWait webDriverWait = new WebDriverWait(driver,10);
@@ -32,8 +33,10 @@ public class FlindersPVTChrome {
     @Test
     public void Case1_OpenHomePageTest(){
         try {
-            DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
-                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capabilities);
+            DesiredCapabilities capability = DesiredCapabilities.chrome();
+            capability.setBrowserName("chrome");
+            //DesiredCapabilities capabilities = new DesiredCapabilities().chrome();
+                WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), capability);
                 driverJ.get("http://stage.flinders.edu.au");
                 driverJ.close();
             }catch (MalformedURLException exception){
