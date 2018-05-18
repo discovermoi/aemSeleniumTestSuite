@@ -254,5 +254,3 @@ public class FlindersPVTChrome {
         driver.findElement(By.cssSelector(".coral-SelectList-sublist button[data-path='/apps/flinders/components/content/accordion']")).click();
     }
     */
-
-}
