@@ -45,6 +45,7 @@ public class FlindersPVTChrome {
             throw new RuntimeException(exception);
         }
     }*/
+    @Test
     public void Case1_OpenHomePageTest() {
         try {
             DesiredCapabilities capability = DesiredCapabilities.chrome();
