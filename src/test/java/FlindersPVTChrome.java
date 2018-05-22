@@ -48,7 +48,7 @@ public class FlindersPVTChrome {
     @Test
     public void Case1_OpenHomePageTest() {
         try {
-            DesiredCapabilities capability = DesiredCapabilities.chrome();
+            DesiredCapabilities capability = DesiredCapabilities.firefox();
             WebDriver driverJ = new RemoteWebDriver(new URL("http://10.1.0.73:4444/wd/hub"), capability);
             driverJ.get("http://stage.flinders.edu.au");
             driverJ.close();
