@@ -30,22 +30,23 @@ public class FlindersPVTChrome {
     WebDriverWait webDriverWait = new WebDriverWait(driver,10);
     WebDriverWait webDriverWaitForAuthor = new WebDriverWait(driver,20);*/
 
-    /*@Test
+    @Test
     public void Case1_OpenHomePageTest() {
         try
         {
             ChromeOptions options = new ChromeOptions();
             System.out.println("Chrome Options " + options.getBrowserName());
             System.out.println("Chrome Options " + options.getVersion());
-            WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), new ChromeOptions());
+            WebDriver driverJ = new RemoteWebDriver(new URL("http://10.1.0.73:4444/wd/hub"), new ChromeOptions());
             driverJ.get("http://stage.flinders.edu.au"); driverJ.close();
         }
         catch(MalformedURLException exception)
         {
             throw new RuntimeException(exception);
         }
-    }*/
-    @Test
+    }
+
+    /*@Test
     public void Case1_OpenHomePageTest() {
         try {
             DesiredCapabilities capability = DesiredCapabilities.firefox();
@@ -55,7 +56,7 @@ public class FlindersPVTChrome {
         } catch (MalformedURLException exception) {
             throw new RuntimeException(exception);
         }
-    }
+    }*/
 }
 
 
