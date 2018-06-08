@@ -23,7 +23,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FlindersPVTChrome {
+public class FlindersChrome {
 
     @Test
     public void HelloWorld() {

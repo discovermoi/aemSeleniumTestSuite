@@ -26,7 +26,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FlindersPVTFireFox {
+public class FlindersFire {
     /*FirefoxDriver driver=new FirefoxDriver();
     Actions builder = new Actions(driver);
     WebDriverWait webDriverWait = new WebDriverWait(driver,10);*/
