@@ -24,7 +24,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class FlindersChrome {
-
     @Test
     public void HelloWorld() {
         try {
