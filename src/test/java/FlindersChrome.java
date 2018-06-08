@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -28,6 +29,8 @@ public class FlindersChrome {
     public void HelloWorld() {
         try {
             ChromeOptions options = new ChromeOptions();
+            options.getVersion();
+            options.setBinary(new File("/Downloads/chromedriver"));
             WebDriver driverJ = new RemoteWebDriver(new URL("http://10.24.44.52:4444/wd/hub"), options);
             driverJ.get("http://stage.flinders.edu.au");
             driverJ.close();
