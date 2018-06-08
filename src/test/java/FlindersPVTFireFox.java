@@ -35,7 +35,7 @@ public class FlindersPVTFireFox {
     public void Case1_OpenHomePageTest(){
         try
         {
-            WebDriver driverJ = new RemoteWebDriver(new URL("http://10.1.0.73:4444/wd/hub"), new FirefoxOptions());
+            WebDriver driverJ = new RemoteWebDriver(new URL("http://fuaemci.australiasoutheast.cloudapp.azure.com:4444/wd/hub"), new FirefoxOptions());
             driverJ.get("http://stage.flinders.edu.au");
             driverJ.close();
         }
