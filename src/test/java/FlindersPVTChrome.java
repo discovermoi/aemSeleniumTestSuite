@@ -30,10 +30,22 @@ public class FlindersPVTChrome {
     WebDriverWait webDriverWait = new WebDriverWait(driver,10);
     WebDriverWait webDriverWaitForAuthor = new WebDriverWait(driver,20);*/
 
-    @Test
+    /*@Test
     public void Case1_OpenHomePageTest() {
             FirefoxDriver driver=new FirefoxDriver();
             driver.get("http://stage.flinders.edu.au"); driver.close();
+    }*/
+
+    @Test
+    public void Case1_OpenHomePageTest() {
+        try {
+            DesiredCapabilities capability = DesiredCapabilities.firefox();
+            WebDriver driverJ = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+            driverJ.get("http://stage.flinders.edu.au");
+            driverJ.close();
+        } catch (MalformedURLException exception) {
+            throw new RuntimeException(exception);
+        }
     }
 
     /*@Test
