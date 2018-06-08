@@ -32,18 +32,8 @@ public class FlindersPVTChrome {
 
     @Test
     public void Case1_OpenHomePageTest() {
-        try
-        {
-            ChromeOptions options = new ChromeOptions();
-            System.out.println("Chrome Options " + options.getBrowserName());
-            System.out.println("Chrome Options " + options.getVersion());
-            WebDriver driverJ = new RemoteWebDriver(new URL("http://10.1.0.73:4444/wd/hub"), new ChromeOptions());
-            driverJ.get("http://stage.flinders.edu.au"); driverJ.close();
-        }
-        catch(MalformedURLException exception)
-        {
-            throw new RuntimeException(exception);
-        }
+            FirefoxDriver driver=new FirefoxDriver();
+            driver.get("http://stage.flinders.edu.au"); driver.close();
     }
 
     /*@Test
