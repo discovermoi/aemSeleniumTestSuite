@@ -11,17 +11,23 @@ This Project aims at:
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.URL;
+
 public class FlindersPVTFireFox {
-    FirefoxDriver driver=new FirefoxDriver();
+    /*FirefoxDriver driver=new FirefoxDriver();
     Actions builder = new Actions(driver);
-    WebDriverWait webDriverWait = new WebDriverWait(driver,10);
+    WebDriverWait webDriverWait = new WebDriverWait(driver,10);*/
+    WebDriver driver = new FirefoxDriver();
 
     @Test
     public void Case1_OpenHomePageTest(){
