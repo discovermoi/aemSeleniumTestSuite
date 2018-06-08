@@ -28,7 +28,7 @@ public class FlindersChrome {
     public void HelloWorld() {
         try {
             DesiredCapabilities capability = DesiredCapabilities.chrome();
-            WebDriver driverJ = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
+            WebDriver driverJ = new RemoteWebDriver(new URL("http://10.24.44.52:4444/wd/hub"), capability);
             driverJ.get("http://stage.flinders.edu.au");
             driverJ.close();
         } catch (MalformedURLException exception) {
