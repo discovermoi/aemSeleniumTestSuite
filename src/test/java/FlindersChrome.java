@@ -27,7 +27,7 @@ public class FlindersChrome {
     @Test
     public void HelloWorld() {
         try {
-            DesiredCapabilities capability = DesiredCapabilities.chrome();
+            DesiredCapabilities capability = DesiredCapabilities.firefox();
             WebDriver driverJ = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
             driverJ.get("http://stage.flinders.edu.au");
             driverJ.close();
