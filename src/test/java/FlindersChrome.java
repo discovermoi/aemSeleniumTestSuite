@@ -25,7 +25,7 @@ import java.net.URL;
 
 public class FlindersChrome {
     @Test
-    public void HelloWorld1() {
+    public void HelloWorld() {
         try {
             DesiredCapabilities capability = DesiredCapabilities.chrome();
             WebDriver driverJ = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capability);
