@@ -29,8 +29,6 @@ public class FlindersChrome {
     public void HelloWorld() {
         try {
             ChromeOptions options = new ChromeOptions();
-            options.getVersion();
-            options.setBinary(new File("/Downloads/chromedriver"));
             WebDriver driverJ = new RemoteWebDriver(new URL("http://10.24.44.52:4444/wd/hub"), options);
             driverJ.get("http://stage.flinders.edu.au");
             driverJ.close();
