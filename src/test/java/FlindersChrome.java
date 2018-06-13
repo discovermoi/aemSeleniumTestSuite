@@ -30,8 +30,11 @@ public class FlindersChrome {
     public void HelloWorld() {
         try {
             FirefoxOptions options = new FirefoxOptions();
+            System.out.println("1111111111");
             WebDriver driverJ = new RemoteWebDriver(new URL("http://10.24.44.52:4444/wd/hub"), options);
+            System.out.println("22222222222");
             driverJ.get("http://stage.flinders.edu.au");
+            System.out.println("33333333333");
             driverJ.close();
         } catch (MalformedURLException exception) {
             throw new RuntimeException(exception);
