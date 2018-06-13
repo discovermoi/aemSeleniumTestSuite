@@ -1,4 +1,4 @@
-import org.openqa.selenium.chrome.ChromeDriver;
+/*import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -16,4 +16,26 @@ public class DriverProperties {
         // Open browser with capability
         ChromeDriver driver = new ChromeDriver(cap);
     }
+}*/
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class DriverProperties {
+
+    public static void main(String argsp[]) {
+        // Create object of DesiredCapabilities class
+        DesiredCapabilities cap = DesiredCapabilities.firefox();
+
+// Set ACCEPT_SSL_CERTS  variable to true
+        cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+
+// Set the driver path
+
+        // Open browser with capability
+        FirefoxDriver driver = new FirefoxDriver(cap);
+    }
 }
+
