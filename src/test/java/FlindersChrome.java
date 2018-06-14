@@ -31,7 +31,7 @@ public class FlindersChrome {
         try {
             ChromeOptions options = new ChromeOptions();
             System.out.println("1111111111");
-            WebDriver driverJ = new RemoteWebDriver(new URL("http://10.24.44.52:4444/wd/hub"), options);
+            WebDriver driverJ = new RemoteWebDriver(new URL("http://10.24.44.52:5555/wd/hub"), options);
             System.out.println("22222222222");
             driverJ.get("http://stage.flinders.edu.au");
             System.out.println("33333333333");
