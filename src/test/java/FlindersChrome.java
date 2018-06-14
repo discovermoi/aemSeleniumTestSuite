@@ -29,7 +29,7 @@ public class FlindersChrome {
     @Test
     public void HelloWorld() {
         try {
-            ChromeOptions options = new ChromeOptions();
+            FirefoxOptions options = new FirefoxOptions();
             System.out.println("1111111111");
             WebDriver driverJ = new RemoteWebDriver(new URL("http://10.24.44.52:5555/wd/hub"), options);
             System.out.println("22222222222");
